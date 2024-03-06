@@ -63,6 +63,14 @@ Card.prototype.setupCard = function() {
             rating.appendChild(star);
         }
         detailContainer.appendChild(rating);
+
+        if (this.text) {
+            const text = document.createElement("p");
+            text.className = "card_text";
+            text.innerText = this.text;
+            detailContainer.appendChild(text);
+        }
+
         this.container.appendChild(detailContainer);
     }
 }
@@ -71,9 +79,7 @@ const container = document.getElementById("container");
 const title = document.createElement("h2");
 title.innerText = "Card";
 
-const verticalContainer = new Card("logo_primary.png", "Card Label", "Card Title", "Hilight", "crossOut", 3);
-console.log("here");
-console.log(verticalContainer);
+const verticalContainer = new Card("logo_primary.png", "Card Label", "Card Title", "Hilight", "crossOut", 3, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
 
 container.appendChild(title);
 container.appendChild(verticalContainer.container);
