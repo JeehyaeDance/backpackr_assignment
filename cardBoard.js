@@ -44,13 +44,34 @@ Card.prototype.setupCard = function() {
     main.appendChild(highlightGroup);
 
     this.container.appendChild(main);
+
+    if (this.rating) {
+        const detailContainer = document.createElement("div");
+        detailContainer.className = "card_detail";
+        const rating = document.createElement("div");
+        rating.className = "card_rating";
+
+        for (let i = 0; i < this.rating; i++) {
+            const star = document.createElement("span");
+            star.className = "star filled_star";
+            rating.appendChild(star);
+        }
+
+        for (let i = 0; i < 5 - this.rating; i++) {
+            const star = document.createElement("span");
+            star.className = "star empty_star";
+            rating.appendChild(star);
+        }
+        detailContainer.appendChild(rating);
+        this.container.appendChild(detailContainer);
+    }
 }
 
 const container = document.getElementById("container");
 const title = document.createElement("h2");
 title.innerText = "Card";
 
-const verticalContainer = new Card();
+const verticalContainer = new Card("logo_primary.png", "Card Label", "Card Title", "Hilight", "crossOut", 3);
 console.log("here");
 console.log(verticalContainer);
 
