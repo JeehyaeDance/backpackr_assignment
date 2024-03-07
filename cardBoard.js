@@ -128,7 +128,7 @@ HorizontalCard.prototype.setupCard = function() {
     this.container.appendChild(main);
 }
 
-const container = document.getElementById("container");
+const cardContainer = document.getElementById("cardContainer");
 const title = document.createElement("h2");
 title.innerText = "Card";
 
@@ -138,8 +138,8 @@ const verticalNoDetail = new VerticalCard("logo_primary.png", "Card Label", "Car
 
 const horizontalCard = new HorizontalCard("logo_primary.png", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "John Doe", 3,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
 
-container.appendChild(title);
-container.appendChild(verticalDefault.container);
-container.appendChild(verticalRating.container);
-container.appendChild(verticalNoDetail.container);
-container.appendChild(horizontalCard.container);
+cardContainer.appendChild(title);
+cardContainer.appendChild(verticalDefault.container);
+cardContainer.appendChild(verticalRating.container);
+cardContainer.appendChild(verticalNoDetail.container);
+cardContainer.appendChild(horizontalCard.container);
