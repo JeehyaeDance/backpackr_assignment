@@ -1,8 +1,8 @@
-const Input = function (initialValue = "", placeholder = "주문 요청사항을 입력해주세요", disabled = false, maxlength = 500) {
+const Input = function (initialValue = "", type = "default", placeholder = "주문 요청사항을 입력해주세요", maxlength = 500) {
     this.value = initialValue;
     this.initialValue = initialValue;
     this.placeholder = placeholder;
-    this.disabled = disabled;
+    this.type = type;
     this.maxlength = maxlength;
     this.form = document.createElement("form");
     this.form.className = "input_form";
@@ -32,10 +32,19 @@ Input.prototype.setupInput = function() {
     button.innerText = "Save";
     button.className = "save_button";
     button.style.display = "none";
-    
-    this.form.appendChild(input);
-    this.form.appendChild(letterCount);
-    this.form.appendChild(button);
+
+    if (this.type === "disabled") {
+        input.setAttribute("disabled", true);
+        this.form.appendChild(input);
+        this.form.appendChild(letterCount);
+    } else if (this.type === "readonly") {
+        input.setAttribute("readonly", true);
+        this.form.appendChild(input);
+    } else if (this.type === "default") {
+        this.form.appendChild(input);
+        this.form.appendChild(letterCount);
+        this.form.appendChild(button);
+    }
 }
 
 Input.prototype.updateValue = function(e) {
@@ -58,8 +67,12 @@ const inputContainer = document.getElementById("inputContainer");
 const inputTitle = document.createElement("h2");
 inputTitle.innerText = "Input Form";
 
-const input = new Input("초기값");
+const defaultInput = new Input("초기값");
+const disabledInput = new Input("", "disabled", "주문 요청사항을 입력해주세요");
+const readonlyInput = new Input("readonly 상태입니다", "readonly", "주문 요청사항을 입력해주세요", 500);
 
 inputContainer.appendChild(inputTitle);
-inputContainer.appendChild(input);
+inputContainer.appendChild(defaultInput);
+inputContainer.appendChild(disabledInput);
+inputContainer.appendChild(readonlyInput);
 

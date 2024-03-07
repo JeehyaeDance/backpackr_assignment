@@ -7,11 +7,14 @@
     font-size: 14px;
     outline-color: rgb(138, 205, 208);
     resize: none;
-
 }
 
 .inputbox::placeholder {
     color: rgb(234,166,163);
+}
+
+.inputbox:read-only {
+    outline: 0;
 }
 
 .letter_count {
@@ -40,5 +43,6 @@
     height: 100px;
     color: rgb(138, 205, 208);
     border: 1px solid rgb(163, 163, 163);
+    border-radius: 3px;
     background-color: rgb(255, 255, 255);
 }
