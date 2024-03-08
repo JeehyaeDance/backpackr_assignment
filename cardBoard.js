@@ -29,6 +29,7 @@ function VerticalCard (imgSrc, label, title, highlight, crossOut, rating = null,
     this.text = text;
 
     this.setupCard();
+    return this.container;
 }
 
 VerticalCard.prototype.setupCard = function() {
@@ -91,6 +92,7 @@ function HorizontalCard (imgSrc, title, name, rating, text) {
     this.text = text;
 
     this.setupCard();
+    return this.container;
 }
 
 HorizontalCard.prototype.setupCard = function() {
@@ -139,7 +141,7 @@ const verticalNoDetail = new VerticalCard("logo_primary.png", "Card Label", "Car
 const horizontalCard = new HorizontalCard("logo_primary.png", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "John Doe", 3,"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.");
 
 cardContainer.appendChild(title);
-cardContainer.appendChild(verticalDefault.container);
-cardContainer.appendChild(verticalRating.container);
-cardContainer.appendChild(verticalNoDetail.container);
-cardContainer.appendChild(horizontalCard.container);
+cardContainer.appendChild(verticalDefault);
+cardContainer.appendChild(verticalRating);
+cardContainer.appendChild(verticalNoDetail);
+cardContainer.appendChild(horizontalCard);
