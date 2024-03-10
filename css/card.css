@@ -1,25 +1,81 @@
-.horizontal_card_img {
-  max-width: 200px;
-  display: inline-block;
+.cardContainer {
+  width: 100%;
 }
 
-.horizontal_card {
+.card {
   border: 2px solid #e2e1e2;
   border-radius: 3px;
-  display: table;
-  min-width: 502px;
+  overflow: hidden;
 }
 
-.horizontal_card_main {
-  min-width: 200px;
-  max-width: 300px;
+.card > .content {
+  padding: 12px;
+}
+
+.hilight-container {
+  display: inline;
+}
+
+.hilight-container > span:not(:last-child) {
+  padding-right: 5px;
+}
+
+.hilight {
+  font-size: 15px;
+  color: #e07d79;
+}
+
+.crossout {
+  color: #9b9b9b;
+  font-size: 13px;
+  -ms-text-decoration: line-through;
+  text-decoration: line-through;
+}
+
+.card.vertical {
+  width: 240px;
   display: inline-block;
-  background-color: #f8f9fb;
-  padding: 20px;
 }
 
-.horizontal_card_title {
-  display: block;
+.card.vertical > .imgContainer {
+  height: 34%;
+}
+
+.card.vertical > .content {
+  height: 66%;
+}
+
+.card.vertical > .imgContainer > img {
+  height: 100%;
+  margin: auto;
+}
+
+.card.horizontal {
+  width: 480px;
+  height: 160px;
+  display: table;
+  position: relative;
+}
+
+.card.horizontal > .imgContainer {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+  width: 40%;
+}
+
+.card.horizontal > .imgContainer > img {
+  display: inline-block;
+  max-width: 192px;
+}
+
+.card.horizontal > .content {
+  display: inline-block;
+  width: 280px;
+  height: 100%;
+}
+
+.card.horizontal > .content > .title {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -28,82 +84,21 @@
   padding-bottom: 20px;
 }
 
-.horizontal_card_text {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  max-height: 4.5em;
+.title {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+  padding-bottom: 16px;
 }
 
-.card_name {
-  position: relative;
-  color: #a5a5a5;
-  padding-left: 18px;
-}
-
-.card_name::after {
-  content: "";
-  position: absolute;
-  border-left: 1px solid #a5a5a5;
-  height: 1em;
-  left: 10px;
-}
-
-.horizontal_bottom_row {
-  padding-top: 20px;
-  line-height: 1;
-}
-
-.vertical_card {
-  border: 2px solid #e2e1e2;
-  border-radius: 3px;
-  max-width: 16%;
-  min-width: 250px;
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.vertical_card_main {
-  padding: 10px;
-  background-color: #f8f9fb;
-}
-
-.vertical_card_label {
+.label {
   color: #a5a5a5;
   display: block;
   font-size: 14px;
   padding-bottom: 5px;
 }
 
-.vertical_card_title {
-  display: block;
-  font-weight: 600;
-  font-size: 16px;
-  padding-bottom: 15px;
-}
-
-.vertical_card_highlight {
-  font-size: 15px;
-  color: #e07d79;
-  padding-right: 5px;
-}
-
-.vertical_card_crossout {
-  color: #9b9b9b;
-  font-size: 13px;
-  -ms-text-decoration: line-through;
-  text-decoration: line-through;
-}
-
-.card_detail {
-  padding: 10px;
-  background-color: #f8f9fb;
-  border-top: 2px solid #e2e1e2;
-}
-
-.card_rating {
+.rating {
   display: inline-block;
 }
 
@@ -112,11 +107,10 @@
   border-radius: 50%;
   width: 15px;
   height: 15px;
-  margin-left: 3px;
 }
 
-.star:first-child {
-  margin-left: 0;
+.star:not(:first-child) {
+  margin-left: 3px;
 }
 
 .filled_star {
@@ -127,11 +121,40 @@
   background-color: #d9d8d8;
 }
 
-.card_text {
+.author {
+  position: relative;
+  color: #a5a5a5;
+  padding-left: 18px;
+}
+
+.author::after {
+  content: "";
+  position: absolute;
+  border-left: 1px solid #a5a5a5;
+  height: 1em;
+  left: 10px;
+}
+
+.card.vertical > .review-container {
+  border-top: 2px solid #e2e1e2;
+  width: 240px;
+  padding: 12px;
+}
+
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card.vertical > .review-container > .text {
   color: #737373;
   font-size: 14px;
-  overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis;
   margin: 0;
+}
+
+.card.horizontal > .content > .review-container > .text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
