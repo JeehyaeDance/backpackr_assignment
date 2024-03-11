@@ -1,4 +1,4 @@
-.cardContainer {
+.card-container {
   width: 100%;
 }
 
@@ -37,7 +37,7 @@
   display: inline-block;
 }
 
-.card.vertical > .imgContainer {
+.card.vertical > .img-container {
   height: 34%;
 }
 
@@ -45,7 +45,7 @@
   height: 66%;
 }
 
-.card.vertical > .imgContainer > img {
+.card.vertical > .img-container > img {
   height: 100%;
   margin: auto;
 }
@@ -57,14 +57,14 @@
   position: relative;
 }
 
-.card.horizontal > .imgContainer {
+.card.horizontal > .img-container {
   display: table-cell;
   vertical-align: middle;
   height: 100%;
   width: 40%;
 }
 
-.card.horizontal > .imgContainer > img {
+.card.horizontal > .img-container > img {
   display: inline-block;
   max-width: 192px;
 }
@@ -113,11 +113,11 @@
   margin-left: 3px;
 }
 
-.filled_star {
+.filled-star {
   background-color: #fec62f;
 }
 
-.empty_star {
+.empty-star {
   background-color: #d9d8d8;
 }
 

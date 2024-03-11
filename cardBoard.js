@@ -1,33 +1,10 @@
-function createImageTag(src) {
-  var img = document.createElement("img");
-  img.src = src;
-  return img;
-}
-
-function createDivTag(className) {
-  var div = document.createElement("div");
-  div.className = className;
-  return div;
-}
-
-function createSpanTag(className, innerText) {
-  var span = document.createElement("span");
-  span.className = className;
-  span.innerText = innerText;
-  return span;
-}
-
-function createPTag(className, innerText) {
-  var p = document.createElement("p");
-  p.className = className;
-  p.innerText = innerText;
-  return p;
-}
-
 function Hilight(primary, secondary) {
   var container = createDivTag("hilight-container");
-  var primary = createSpanTag("hilight", primary);
-  var secondary = createSpanTag("crossout", secondary);
+  var primary = createSpanTag({ classes: ["hilight"], innerText: primary });
+  var secondary = createSpanTag({
+    classes: ["crossout"],
+    innerText: secondary,
+  });
 
   this.hilight = container;
   this.hilight.appendChild(primary);
@@ -46,9 +23,9 @@ function Rating(count) {
   for (var i = 0; i < 5; i++) {
     var star;
     if (i < count) {
-      star = createSpanTag("star filled_star", "");
+      star = createSpanTag({ classes: ["star", "filled-star"] });
     } else {
-      star = createSpanTag("star empty_star", "");
+      star = createSpanTag({ classes: ["star", "empty-star"] });
     }
     container.appendChild(star);
   }
@@ -73,7 +50,10 @@ function Review(review, isFull) {
   }
 
   if (review.author) {
-    var reviewAuthor = createSpanTag("author", review.author);
+    var reviewAuthor = createSpanTag({
+      classes: ["author"],
+      innerText: review.author,
+    });
     this.review.appendChild(reviewAuthor);
   }
 
@@ -84,10 +64,10 @@ function Card(type, title) {
   var imageSrc = "logo_primary.png";
 
   this.card = createDivTag("card " + type);
-  this.imgContainer = createDivTag("imgContainer");
-  this.img = createImageTag(imageSrc);
+  this.imgContainer = createDivTag("img-container");
+  this.img = createImageTag(imageSrc, "image for this card");
   this.content = createDivTag("content");
-  this.title = createSpanTag("title", title);
+  this.title = createSpanTag({ classes: ["title"], innerText: title });
 
   this.imgContainer.appendChild(this.img);
   this.card.appendChild(this.imgContainer);
@@ -108,7 +88,7 @@ Card.prototype.display = function () {
 function VerticalCard(title, label, review) {
   Card.call(this, "vertical", title, label);
 
-  this.label = createSpanTag("label", label);
+  this.label = createSpanTag({ classes: ["label"], innerText: label });
   this.content.insertBefore(this.label, this.title);
 
   this.hilight = new Hilight("Hilight", "Cross Out");

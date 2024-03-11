@@ -21,7 +21,7 @@
   outline: none;
 }
 
-.letter_count {
+.letter-count {
   position: absolute;
   right: 15px;
   bottom: 10px;
@@ -33,13 +33,13 @@
   user-select: none;
 }
 
-.input_form {
+.input-form {
   width: 1000px;
   position: relative;
   display: table;
 }
 
-.save_button {
+.save-button {
   position: absolute;
   right: 0;
   top: 0;
@@ -49,4 +49,12 @@
   border: 1px solid #dcdbdb;
   border-radius: 3px;
   background-color: #ffffff;
+}
+
+.hidden {
+  display: none;
+}
+
+.block {
+  display: block;
 }
