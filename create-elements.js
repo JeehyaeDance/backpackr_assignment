@@ -36,15 +36,6 @@ function createPTag(className, innerText) {
   return p;
 }
 
-// function createButtonTag(className, innerText, id) {
-//   var button = document.createElement("button");
-//   button.className = className;
-//   button.innerText = innerText;
-//   button.setAttribute("id", id);
-//   button.setAttribute("type", "button");
-//   return button;
-// }
-
 function createButtonTag(attrs) {
   var button = document.createElement("button");
   if (attrs && attrs.classes) {

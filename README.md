@@ -15,6 +15,7 @@
 - ui_module.html: UI출력을 위한 메인 페이지
 - cardBoard.js: Card, verticalCard, 그리고 horizontalCard를 출력하는 함수
 - inputForm.js: custom input을 Type (default, disabled, readonly)에 따라 다르게 셋업하는 함수
+- create-elements.js: image, div, span, p 와 같은 html 태그들을 생성하는 함수들
 - css
 
 ## 기능 구현
@@ -27,7 +28,8 @@
 
 2. 입력 폼 UI
 
-- Input 함수는 initialValue, type, placeholder, maxlength를 parameter로 받고 form을 최상위 element로 input, button, 그리고 남은 글자 수를 보여주는 span을 감싸고 반환합니다.
+- Input 함수는 type과 attr를 parameter로 받고 form을 최상위 element로 input, button, 그리고 남은 글자 수를 보여주는 span을 감싸고 반환합니다.
+- attr로는 maxLength 와 defaultValue를 받습니다.
 - type은 "disabled", "readonly", "default"에 따라 input의 상태를 다르게 반환합니다.
 - 입력 중 상태에는 save버튼이 우측에 출력되고 초기값과 같을 경우 사라집니다.
 - "readonly"의 스타일은 input을 클릭했을때, outline의 색 변화가 없습니다. 또한 남은 글자수도 출력되지 않습니다.
